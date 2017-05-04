@@ -4,9 +4,13 @@ import Square from './Square'
 
 class Board extends Component {
   renderSquare (i) {
+    const cName = this.props.highlight.includes(i)
+      ? 'square square--highlight'
+      : 'square'
     return (
       <Square
         key={i}
+        cName={cName}
         value={this.props.squares[i]}
         onClick={() => this.props.onClick(i)} />
     )

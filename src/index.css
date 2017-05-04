@@ -1,6 +1,15 @@
+* {
+  margin: 0;
+  padding: 0;
+  color: #222;
+}
+
 body {
-  font: 14px "Century Gothic", Futura, sans-serif;
-  margin: 20px;
+  font-family: 'Roboto', sans-serif;
+}
+
+h1 {
+  color: #fff;
 }
 
 ol, ul {
@@ -13,23 +22,38 @@ ol, ul {
   display: table;
 }
 
+/*Game Border*/
+.board-row:first-child { border-bottom: 5px solid #61DAFB;}
+.board-row:nth-child(2) { border-bottom: 5px solid #61DAFB;}
+.square:first-child { border-right: 5px solid #61DAFB;}
+.square:nth-child(2) { border-right: 5px solid #61DAFB;}
+
 .status {
   margin-bottom: 10px;
 }
 
 .square {
   background: #fff;
-  border: 1px solid #999;
+  border: 1px dashed #eee;
   float: left;
-  font-size: 24px;
+  font-size: 50px;
   font-weight: bold;
-  line-height: 34px;
-  height: 34px;
+  line-height: 50px;
+  height: 120px;
   margin-right: -1px;
   margin-top: -1px;
   padding: 0;
   text-align: center;
-  width: 34px;
+  width: 120px;
+  transition: .2s ease-in;
+}
+
+em {
+  transition: 2s ease-in;
+}
+
+.square--highlight  {
+  background-color: greenyellow;
 }
 
 .square:focus {
@@ -43,8 +67,28 @@ ol, ul {
 .game {
   display: flex;
   flex-direction: row;
+  justify-content: center;
+  height: 500px;
+  margin-top: 150px;
 }
 
 .game-info {
   margin-left: 20px;
+}
+
+ /*Small Screens*/
+ @media screen and (max-width: 600px) {
+  .game {
+    display: inline-block;
+    margin-top: 50px;
+  }
+
+  .game-board {
+    margin-bottom: 20px;
+  }
+
+  .square {
+    height: 95px;
+    width: 95px;
+  }
 }
